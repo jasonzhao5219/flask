@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>show something</title>
+</head>
+<body>
+	
+		{% with messages = get_flashed_messages() %}
+	        {% if messages %}
+	              {% for message in messages %}
+	                 <p>{{message}}</p>
+	              {% endfor %}
+	        {% endif %}
+	    {% endwith %}
+	
+	
+	<div id="resultid" method="post">
+		your name is: {{name}}
+		<br>
+		dojo location: {{location}}
+		<br>
+		favorate language: {{language}}
+		<br>
+		comment : {{comment}}
+		<br>
+		<form action="/" method="post">
+			<input type="submit" name="sub" value="GoBack">
+		</form>
+	</div>
+	<style type="text/css">
+		.validation{
+			color: red;
+		}
+	</style>
+</body>
+</html>
