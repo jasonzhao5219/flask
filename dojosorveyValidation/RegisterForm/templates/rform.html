@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register Form</title>
+
+</head>
+<body>
+	<h3>Register Form</h3>
+	{% with messages = get_flashed_messages(with_categories=true) %}
+	  {% if messages %}
+	    <ul class=flashes>
+	    {% for category, message in messages %}
+	      <li class="{{ category }}">{{category}}{{ message }}</li>
+	    {% endfor %}
+	    </ul>
+	  {% endif %}
+		{{success}}
+
+	<form action="/process" method="post">
+		<label for="email">Your email:</label>
+        <input type="text" name="email"><br>
+        <label for="first_name">Your frist name:</label>
+        <input type="text" name="first_name"><br>
+        <label for="lat_name">Your last name:</label>
+        <input type="text" name="last_name"><br>
+        <label for="name">Password:</label>
+        <input type="text" name="password"><br>
+        <label for="comform_Password">Plz comform your password:</label>
+        <input type="text" name="comfirm_password"><br>
+       	<input type="submit" name="submit" value="submit">
+      	
+	</form>
+	{% endwith %}
+</body>
+</html>
